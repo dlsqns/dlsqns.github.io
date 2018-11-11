@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <link href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" rel="stylesheet" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+        <script src="../js/jquery-3.3.1.min.js"></script>
+<style>
+* {margin:0;padding:0;font-size:12px;font-weight:400;color:#000;}
+ul,li {list-style:none;}
+select {background:none;appearance:none;}
+a {text-decoration:none;}
+a:active, 
+a:focus, 
+a:hover {text-decoration:none;}
+
+html,body{}
+.wrap{overflow-x:hidden;}
+
+header .util{text-align:right; width:1000px; margin:0 auto;}
+header .util li{display:inline-block; margin:15px 0 10px 10px; padding:0 0 0 10px;}
+header .util li a{display:inline-block; color:#65666a; font-weight:500; margin-right:20px;}
+/*header .util li:first-child{margin-left:0; padding-left:0; background:none;}*/
+    
+nav{position:static; left:0; top:37px; width:100%; overflow:hidden; height:150px; background:#5b5c61; z-index:110;}
+nav .gnb{width:1000px; margin:0 auto;}
+/*nav .gnb:after{display:block; content:""; clear:both;}*/
+nav .gnb h1{float:left; width:154px; padding:29px 0 29px 0;}
+nav .gnb > .gnb_list{float:right; padding:32px 15px 0 0;}
+nav .gnb .gnb_list > li{position:relative; display:inline-block; margin:0 0 0 55px;}
+/*nav .gnb .gnb_list li:first-child{margin-left:0;}*/
+nav .gnb .gnb_list > li > a{display:inline-block; font-size:18px; color:#fff; font-weight:500;}
+nav .gnb .gnb_list .menu:hover > .sub {display: block;} 
+nav .gnb .gnb_list > li:hover > a, nav .gnb .gnb_list > li.on > a{color:#ffb718;}
+nav .gnb .sub{position:absolute; left:50%; top:40px; width:106px; height:157px; margin-left:-53px;}
+nav .gnb .sub li{text-align:center; margin:20px 0 0 0;}
+nav .gnb .sub li:first-child{margin-top:0;}
+nav .gnb .sub a{display:inline-block; font-size:14px; color:#c8c8c9;}
+nav .gnb .sub a:hover{color:#fff;}
+nav .gnb .gnb_list .menu .sub {display: none;} 
+
+footer{background:#33343d;}
+footer .footer_cnt{position:relative;width:990px;margin:0 auto;padding:50px 0 35px 10px;}
+footer .footer_cnt ul li{display:inline-block;margin:0 0 0 5px;padding:0 0 0 5px;}
+footer .footer_cnt ul li:first-child{margin-left:0;padding-left:0;background:none;}
+footer .footer_cnt ul li:first-child a{color:#ffb718;}
+footer .footer_cnt ul li a{display:inline-block;font-size:14px;color:#fff;margin-right:20px;}
+footer .footer_cnt .family_wrap{position:absolute;right:0;top:49px;}
+footer .footer_cnt .copyright{margin:25px 0 0 0;font-size:13px;color:#b2b2b2;line-height:1.7em;}
+footer .footer_cnt .sns_link{margin-bottom:10px;}
+    
+footer .select_wrap{position:relative;width:208px;height:35px;background:#fff;}
+footer .select_wrap select{display:inline-block;width:100%;height:100%;font-size:15px;color:#777;}
+footer .select_wrap em{overflow:hidden;position:absolute;top:8px;left:10px;width:100%;height:20px;padding-right:20px;font-size:14px;color:#333;font-weight:400;box-sizing:border-box;}
+footer .select_wrap select option{font-size:15px;color:#777;}
+    
+div.form-box {width: 1000px; border: 2px solid #cccccc; margin: 50px; padding: 30px; box-sizing: border-box;}
+table.form {width: 100%; border-top: 2px solid #333333; font-size: 14px;}
+table.form td {border-bottom: 1px solid #e0e0e0; padding: 5px 10px;}
+table.form td.th {width: 140px; font-weight: bold; background: #f9f9f9; border-right: 1px solid #e0e0e0;}
+table.form td span.required {margin-left: 5px; color: #ff0000;}
+
+input.text {box-sizing: border-box; height: 30px; width: 180px; padding: 0 10px; font: inherit; border: 1px solid #dfe8f1; border-radius: 3px; outline: none; transition: all 0.3s; vertical-align: middle; -webkit-appearance: none; appearance: none;}
+input.text:focus {border-color: #65a6ff; box-shadow: 0 0 3px 0 #65a6ff;}
+input.full {width: 100%;}
+input.half {width: 49%;}
+input.phone {width: 80px;}
+input.date {width: 100px;}
+input.number {width: 80px; text-align: right;}
+input[type=radio],
+input[type=checkbox] {margin: 0; vertical-align: middle;}
+select {box-sizing: border-box; height: 30px; padding-left: 10px; font: inherit; border: 1px solid #dfe8f1; border-radius: 3px; outline: none; transition: all 0.3s; vertical-align: middle;}
+select:focus {border-color: #65a6ff; box-shadow: 0 0 3px 0 #65a6ff;}
+textarea {box-sizing: border-box; height: 100px; width: 100%; padding: 10px; font: inherit; border: 1px solid #dfe8f1; border-radius: 3px; outline: none; transition: all 0.3s; vertical-align: middle; -webkit-appearance: none; appearance: none;}
+
+ul.input-list {overflow: hidden;}
+ul.input-list li {float: left; margin-right: 30px; line-height: 30px;}
+ul.input-list li input {margin-right: 5px;}
+
+ul.input-list li input[type=checkbox] {position: absolute; opacity: 0;}
+ul.input-list li i {margin-right: 5px; font-size: 16px; vertical-align: middle;}
+ul.input-list li i + i {display: none;}
+ul.input-list li.checked i {display: none;}
+ul.input-list li.checked i + i {display: inline;}
+ul.input-list li.focus i {color: #ff0000;}
+
+
+div.button-box {text-align: right; margin: 20px 0;}
+div.button-box.center {text-align: center;}
+a.btn {display: inline-block; box-sizing: border-box; height: 30px; line-height: 28px; min-width: 100px; padding: 0 10px; border: 1px solid rgba(0, 0, 0, 0.1); background: #f9f9f9; text-align: center; border-radius: 3px; font-size: 14px; transition: all 0.3s; vertical-align: middle;}
+a.btn:hover {border-color: rgba(0, 0, 0, 0.5); box-shadow: 2px 2px 5px 0 rgba(0, 0, 0, 0.3);}
+a.btn:active {box-shadow: none;}
+a.btn i {vertical-align: middle; margin-right: 0.5em;}
+
+a.btn.small {height: 24px; line-height: 22px; min-width: 60px; font-size: 12px;}
+a.btn.medium {height: 30px; line-height: 28px; min-width: 100px; font-size: 14px;}
+a.btn.big {height: 40px; line-height: 38px; min-width: 160px; font-size: 16px;}
+
+a.btn.red {background-color: #e74c3c; color: #ffffff;}
+a.btn.white {background-color: #ffffff; color: #333333;}
+a.btn.lime {background-color: #00bca4; color: #ffffff;}
+
+</style>
+
+    </head>
+
+    <body class="sub form">
+        <div class="wrap">
+		<header>
+			<ul class="util">			  
+				<li><a href="#">로그인</a><span>|</span></li>
+				<li><a href="#" target="">회원가입</a><span>|</span></li>				
+				<li><a href="#">고객센터</a><span>|</span></li>
+				<li class="first"><a href="#">매장 안내</a></li>
+			</ul>
+         </header>
+            
+            <nav>
+				<div class="gnb">
+					<h1><a href="../index.html"><img src="../img/img_h1_logo.png" alt="이마트24"/></a></h1>	
+					<ul class="gnb_list">
+						<li>
+							<a href="#">이마트24 소개</a>
+							<ul class="sub">
+								<li><a href="#">이마트24 스토리</a></li>
+								<li><a href="#">BI/CI (로고)</a></li>
+								<li><a href="#">매장 안내</a></li>
+								<li><a href="#">사업 본부 안내</a></li>
+							</ul>
+						</li>
+						<li><a href="#">창업 안내</a>
+							<ul class="sub">
+							<li><a href="#">창업가이드</a></li>
+							<li><a href="#">사업 설명회</a></li>
+							<li><a href="#">1:1 상담</a></li>
+							<li><a href="#">추천 매장 소개</a></li>
+							</ul>
+						</li>
+						<li><a href="#">NEWS</a>
+							<ul class="sub">
+								<li><a href="#">미디어 소식</a></li>
+								<li><a href="#">공지사항</a></li>
+							</ul>
+						</li>
+						<li><a href="#">행사/이벤트</a>
+							<ul class="sub">
+								<li><a href="#">상품 행사</a></li>
+								<li><a href="#">이벤트</a></li>
+							</ul>
+						</li>
+						<li><a href="#">상품</a>
+							<ul class="sub">
+								<li><a href="#">차별화 상품</a></li>
+							</ul>
+						</li>
+						<li><a href="#">서비스</a>
+							<ul class="sub">
+								<li><a href="#">생활 서비스</a></li>
+								<li><a href="#">제휴 서비스</a></li>
+								<li><a href="#">신세계 포인트</a></li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+            </nav>
+
+        <div id="wrapper">
+            <div class="form-box">
+                <table class="form">
+                    <tbody>
+                        <tr>
+                            <td class="th"><label for="id">아이디<span class="required">*</span></label></td>
+                            <td>
+                                <input type="text" name="" id="id" class="text" />
+                                <a href="#" class="btn medium lime">중복확인</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="th"><label for="pw">비밀번호<span class="required">*</span></label></td>
+                            <td>
+                                <input type="password" name="" id="pw" class="text" />
+                                <a href="#" class="btn small white">재설정</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="th"><label for="">시간선택<span class="required">*</span></label></td>
+                            <td>
+                                <input type="text" name="" id="" class="text" />
+                                <select>
+                                    <option>00:00</option>
+                                    <option>00:00</option>
+                                    <option>00:00</option>
+                                    <option>00:00</option>
+                                    <option>24:00</option>
+                                </select> ~
+                                <input type="text" name="" id="" class="text" />
+                                <select>
+                                    <option>00:00</option>
+                                    <option>00:00</option>
+                                    <option>00:00</option>
+                                    <option>00:00</option>
+                                    <option>24:00</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="th"><label for="title">제목<span class="required">*</span></label></td>
+                            <td><input type="text" name="" id="title" class="text full" /></td>
+                        </tr>
+                        <tr>
+                            <td class="th"><label for="address1">주소<span class="required">*</span></label></td>
+                            <td>
+                                <input type="text" name="" id="address1" class="text half" />
+                                <input type="text" name="" id="address2" class="text half" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="th"><label for="pw">휴대폰<span class="required">*</span></label></td>
+                            <td>
+                                <input type="text" name="" id="pw" class="text phone" /> -
+                                <input type="text" name="" id="pw" class="text phone" /> -
+                                <input type="text" name="" id="pw" class="text phone" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="th"><label for="email">이메일주소<span class="required">*</span></label></td>
+                            <td>
+                                <input type="text" name="" id="email" class="text" /> @
+                                <select name="" id="">
+                                    <option>-회원구분선택-</option>
+                                    <option>기업</option>
+                                    <option>대학</option>
+                                    <option>연구소</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="th"><label for="membership">회원구분</label></td>
+                            <td>
+                                <select name="" id="membership">
+                                    <option>-회원구분선택-</option>
+                                    <option>기업</option>
+                                    <option>대학</option>
+                                    <option>연구소</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="th"><label for="grade1">회원등급</label></td>
+                            <td>
+                                <ul class="input-list">
+                                    <li><input type="radio" name="grade" id="grade1" /><label for="grade1">정회원</label></li>
+                                    <li><input type="radio" name="grade" id="grade2" /><label for="grade2">준회원</label></li>
+                                    <li><input type="radio" name="grade" id="grade3" /><label for="grade3">일반회원</label></li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="th"><label for="hobby1">취미선택</label></td>
+                            <td>
+                                <ul class="input-list">
+                                    <li><input type="checkbox" name="" id="hobby1" /><label for="hobby1">농구</label></li>
+                                    <li><input type="checkbox" name="" id="hobby2" /><label for="hobby2">축구</label></li>
+                                    <li><input type="checkbox" name="" id="hobby3" /><label for="hobby3">독서</label></li>
+                                    <li><input type="checkbox" name="" id="hobby4" /><label for="hobby4">영화감상</label></li>
+                                    <li><input type="checkbox" name="" id="hobby5" /><label for="hobby5">스쿠버</label></li>
+                                    <li><input type="checkbox" name="" id="hobby6" /><label for="hobby6">맛집여행</label></li>
+                                    <li><input type="checkbox" name="" id="hobby7" /><label for="hobby7">등산</label></li>
+                                    <li><input type="checkbox" name="" id="hobby8" /><label for="hobby8">꽃꽂이</label></li>
+                                    <li><input type="checkbox" name="" id="hobby9" /><label for="hobby9">야구</label></li>
+                                    <li><input type="checkbox" name="" id="hobby10" /><label for="hobby10">골프</label></li>
+                                    <li><input type="checkbox" name="" id="hobby11" /><label for="hobby11">글쓰기</label></li>
+                                    <li><input type="checkbox" name="" id="hobby12" checked="checked" /><label for="hobby12">인터넷쇼핑</label></li>
+                                    <li><input type="checkbox" name="" id="hobby13" /><label for="hobby13">요리</label></li>
+                                    <li><input type="checkbox" name="" id="hobby14" checked="checked" /><label for="hobby14">TV시청</label></li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="th"><label for="career">경력사항</label></td>
+                            <td><textarea name="" id="career"></textarea></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="button-box">
+                    <a href="#" class="btn small red">삭제하기</a>
+                    <a href="#" class="btn medium white">목록보기</a>
+                    <a href="#" class="btn big lime">엑셀파일 다운로드 하기</a>
+                </div>
+                <div class="button-box">
+                    <a href="#" class="btn big red"><i class="fas fa-trash"></i>삭제하기</a>
+                    <a href="#" class="btn big white"><i class="fas fa-bars"></i>목록보기</a>
+                    <a href="#" class="btn big lime"><i class="far fa-save"></i>저장하기</a>
+                </div>
+                <div class="button-box">
+                    <a href="#" class="btn small red">삭제하기</a>
+                    <a href="#" class="btn small white">목록보기</a>
+                    <a href="#" class="btn small lime">저장하기</a>
+                </div>
+            </div>
+        </div> <!-- #wrapper  -->
+            
+        <footer>
+			<div class="footer_cnt">
+				<ul>
+					<li><a href="#">개인정보 처리방침</a><span style="color:#FFF">|</span></li>
+					<li><a href="#">이용약관</a><span style="color:#FFF">|</span></li>
+					<li><a href="#">사이트 맵</a><span style="color:#FFF">|</span></li>
+					<li><a href="#" Onclick="button_event();">상품 입점 상담 신청</a><span style="color:#FFF">|</span></li>
+					<li><a href="#">협력사 신문고</a></li>					
+				</ul>
+                <p class="copyright">
+					(주) 이마트24 / 대표이사: 김성영 / 사업자등록번호: 105-86-92454<br>
+					서울특별시 성동구 성수동 2가 281-4 푸조비즈타워 / 고객센터: 02-6916-1500  / Fax: 02-6916-1468<br>
+					COPYRIGHT (C) EMART24. ALL RIGHT RESERVED.
+				</p>
+                <div class="family_wrap">
+						<div class="sns_link">
+						<a href="#" target="_blank"><img src="https://emart24.co.kr/images/emart24Main/ico_blog.png" alt="블로그" /></a>
+						<a href="#" target="_blank"><img src="https://emart24.co.kr/images/emart24Main/ico_facebook.png" alt="페이스북" /></a>
+						<a href="#" target="_blank"><img src="https://emart24.co.kr/images/emart24Main/ico_instagram.png" alt="인스타그램" /></a>
+					    </div>
+                <div class="select_wrap">
+                <select>
+                        <em><option value="">-패밀리 사이트-</option></em>
+						<option value="#">이마트</option>
+						<option value="#">신세계백화점</option>
+						<option value="#">신세계닷컴</option>
+						<option value="#">스타벅스코리아</option>
+						<option value="#">에브리데이</option>
+						<option value="#">트레이더스</option>             
+                </select>
+                </div>          
+                </div>
+            </div>
+        </footer>
+    </div>
+        
+<script>
+
+fakeCheckBox();
+function fakeCheckBox() {
+    $('input[type=checkbox]').next().prepend('<i class="far fa-circle"></i><i class="far fa-check-circle"></i>');
+    
+    $('input[type=checkbox]').each(function() {
+        if ($(this).prop('checked') === true) {
+            $(this).parent().addClass('checked');
+        } else {
+            $(this).parent().removeClass('checked');
+        }
+    });
+    $('input[type=checkbox]').on('change', function() {
+        if ($(this).prop('checked') === true) {
+            $(this).parent().addClass('checked');
+        } else {
+            $(this).parent().removeClass('checked');
+        }
+    });
+    $('input[type=checkbox]').on('focusin', function() {
+        $(this).parent().addClass('focus');
+    }).on('focusout', function() {
+        $(this).parent().removeClass('focus');
+    });
+    
+}
+
+</script>
+    </body>
+</html>
+
+

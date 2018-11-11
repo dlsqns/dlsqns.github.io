@@ -1,0 +1,89 @@
+@charset "utf-8";
+/* CSS Document */
+
+div.form-box {width: 1000px; border: 2px solid #cccccc; margin: 50px; padding: 30px; box-sizing: border-box;}
+table.form {width: 100%; border-top: 2px solid #333333; font-size: 14px;}
+table.form td {border-bottom: 1px solid #e0e0e0; padding: 5px 10px;}
+table.form td.th {width: 140px; font-weight: bold; background: #f9f9f9; border-right: 1px solid #e0e0e0;}
+table.form td span.required {margin-left: 5px; color: #ff0000;}
+
+input.text {box-sizing: border-box; height: 30px; width: 180px; padding: 0 10px; font: inherit; border: 1px solid #dfe8f1; border-radius: 3px; outline: none; transition: all 0.3s; vertical-align: middle; -webkit-appearance: none; appearance: none;}
+input.text:focus {border-color: #65a6ff; box-shadow: 0 0 3px 0 #65a6ff;}
+input.full {width: 100%;}
+input.half {width: 49%;}
+input.phone {width: 80px;}
+input.date {width: 100px;}
+input.number {width: 80px; text-align: right;}
+input[type=radio],
+input[type=checkbox] {margin: 0; vertical-align: middle;}
+select {box-sizing: border-box; height: 30px; padding-left: 10px; font: inherit; border: 1px solid #dfe8f1; border-radius: 3px; outline: none; transition: all 0.3s; vertical-align: middle;}
+select:focus {border-color: #65a6ff; box-shadow: 0 0 3px 0 #65a6ff;}
+textarea {box-sizing: border-box; height: 100px; width: 100%; padding: 10px; font: inherit; border: 1px solid #dfe8f1; border-radius: 3px; outline: none; transition: all 0.3s; vertical-align: middle; -webkit-appearance: none; appearance: none;}
+
+ul.input-list {overflow: hidden;}
+ul.input-list li {float: left; margin-right: 30px; line-height: 30px;}
+ul.input-list li input {margin-right: 5px;}
+
+ul.input-list li input[type=checkbox] {position: absolute; opacity: 0;}
+ul.input-list li i {margin-right: 5px; font-size: 16px; vertical-align: middle;}
+ul.input-list li i + i {display: none;}
+ul.input-list li.checked i {display: none;}
+ul.input-list li.checked i + i {display: inline;}
+ul.input-list li.focus i {color: #ff0000;}
+
+
+div.button-box {text-align: right; margin: 20px 0;}
+div.button-box.center {text-align: center;}
+a.btn {display: inline-block; box-sizing: border-box; height: 30px; line-height: 28px; min-width: 100px; padding: 0 10px; border: 1px solid rgba(0, 0, 0, 0.1); background: #f9f9f9; text-align: center; border-radius: 3px; font-size: 14px; transition: all 0.3s; vertical-align: middle;}
+a.btn:hover {border-color: rgba(0, 0, 0, 0.5); box-shadow: 2px 2px 5px 0 rgba(0, 0, 0, 0.3);}
+a.btn:active {box-shadow: none;}
+a.btn i {vertical-align: middle; margin-right: 0.5em;}
+
+a.btn.small {height: 24px; line-height: 22px; min-width: 60px; font-size: 12px;}
+a.btn.medium {height: 30px; line-height: 28px; min-width: 100px; font-size: 14px;}
+a.btn.big {height: 40px; line-height: 38px; min-width: 160px; font-size: 16px;}
+
+a.btn.red {background-color: #e74c3c; color: #ffffff;}
+a.btn.white {background-color: #ffffff; color: #333333;}
+a.btn.lime {background-color: #00bca4; color: #ffffff;}
+
+
+
+/* color 
+.btn.tiny {min-width: 40px; height: 24px; line-height: 22px; font-size: 11px; padding: 0 8px;}
+.btn.small {min-width: 80px; height: 30px; line-height: 28px; font-size: 13px; padding: 0 12px;}
+.btn.medium {min-width: 120px; height: 38px; line-height: 36px; font-size: 14px; padding: 0 15px;}
+.btn.big {min-width: 160px; height: 46px; line-height: 44px; font-size: 16px; padding: 0 18px;}
+
+.btn.default {color: #555a60; background-color: #fefeff; border-color: rgba(0, 0, 0, 0.2);}
+.btn.default:hover {background-color: #f3f3f9; border-color: #bfc8d1;}
+.btn.lime {color: #ffffff; background-color: #00bca4; border-color: #00a792;}
+.btn.lime:hover {background-color: #00ceb4; border-color: #00b19b;}
+.btn.default {color: #555a60; background-color: #fefeff; border-color: #dfe8f1;}
+.btn.default:hover {background-color: #f3f3f9; border-color: #bfc8d1;}
+.btn.green {color: #ffffff; background-color: #2ecc71;}
+.btn.green:hover {background-color: #58d68d; border-color: #29b765;}
+.btn.red {color: #ffffff; background-color: #e74c3c;}
+.btn.red:hover {background-color: #eb6759; border-color: #cf4436;}
+.btn.orange {color: #ffffff; background-color: #e67e22;}
+.btn.orange:hover {background-color: #ea9143; border-color: #d67520;}
+.btn.blue {color: #ffffff; background-color: #3498db;}
+.btn.blue:hover {background-color: #52a7e0; border-color: #308dcc;}
+.btn.sky {color: #ffffff; background-color: #65a6ff;}
+.btn.sky:hover {background-color: #478ded; border-color: #4c7ec1;}
+.btn.yellow {color: #ffffff; background-color: #ffcc00;}
+.btn.yellow:hover {background-color: #e1b400; border-color: #c59e00;}
+.btn.purple {color: #ffffff; background-color: #984dff;}
+.btn.purple:hover {background-color: #8134eb; border-color: #752fd6;}
+.btn.azure {color: #ffffff; background-color: #41e5c0;}
+.btn.azure:hover {background-color: #27d1ab; border-color: #24c19e;}
+.btn.black {color: #cccccc; background-color: #2d2d2d;}
+.btn.black:hover {color: #fdfdfd; background-color: #151515;}
+.btn.disabled {color: #2b2f33; background-color: #f3f3f9; border-color: #bfc8d1; cursor: default; opacity: 0.65;}
+.btn.disabled:active {box-shadow: none;}
+.btn.disabled:active:before {content: ""; background: none;}
+*/
+
+
+
+
