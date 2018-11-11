@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"  lang="ko" xml:lang="ko">
+<head>
+
+<title>이마트24</title>
+<link rel="stylesheet" href="fa/css/font-awesome.min.css" />
+<link rel="stylesheet" href="css/style.css" />
+<script src="js/jquery-3.3.1.min.js"></script>
+<script type="text/javascript" src="js/jquery.plugin.js"></script>
+<script type="text/javascript" src="js/common.js"></script>
+<script type="text/javascript" src="js/jcommon.js"></script>    
+        
+<style>
+</style>
+</head>
+    
+<body>
+<!-- 로그인 화면 -->
+<div id="id01" class="modal">
+  
+  <form class="modal-content animate" action="/action_page.php">
+    <div class="imgcontainer">
+      <span onclick="document.getElementById('id01').style.display='none'" class="close" title="닫기">&times;</span>
+      <img src="img/emart.jpg" alt="emart" class="emart">
+    </div>
+
+    <div class="login_container">
+      <label for="name"><b>아이디</b></label>
+      <input type="text" placeholder="아이디를 입력하세요." name="name" required>
+
+      <label for="psw"><b>비밀번호</b></label>
+      <input type="password" placeholder="비밀번호를 입력하세요." name="psw" required>
+        
+      <button type="submit" id="button">로그인</button>
+      <label>
+        <input type="checkbox" checked="checked" name="remember"> 아이디 저장
+      </label>
+    </div>
+
+    <div class="login_container" style="background-color:#f1f1f1">
+      <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">취소</button>
+      <span class="psw"><a href="#">비밀번호를 잊으셨습니까?</a></span>
+    </div>
+      
+  </form>
+</div>    
+    
+    
+	<div class="wrap">
+		<header>
+			<ul class="util">			  
+				<li><a href="#" onclick="document.getElementById('id01').style.display='block'">로그인</a><span>|</span></li>
+				<li><a href="page/form.html">회원가입</a><span>|</span></li>				
+				<li><a href="#">고객센터</a><span>|</span></li>
+				<li class="first"><a href="#">매장 안내</a></li>
+			</ul>
+         </header>   
+			<nav>
+				<div class="gnb">
+					<h1><a href="#"><img src="img/img_h1_logo.png" alt="이마트24"/></a></h1>	
+					<ul class="gnb_list">
+						<li class="menu"><a href="#">이마트24 소개</a>
+							<ul class="sub">
+								<li><a href="#">이마트24 스토리</a></li>
+								<li><a href="#">BI/CI (로고)</a></li>
+<!--
+								<li><a href="#">매장 안내</a></li>
+								<li><a href="#">사업 본부 안내</a></li>
+-->
+							</ul>
+						</li>
+						<li class="menu"><a href="#">창업 안내</a>
+							<ul class="sub">
+							<li><a href="#">창업가이드</a></li>
+							<li><a href="#">사업 설명회</a></li>
+<!--
+							<li><a href="#">1:1 상담</a></li>
+							<li><a href="#">추천 매장 소개</a></li>
+-->
+							</ul>
+						</li>
+						<li class="menu"><a href="#">NEWS</a>
+							<ul class="sub">
+								<li><a href="#">미디어 소식</a></li>
+								<li><a href="#">공지사항</a></li>
+							</ul>
+						</li>
+						<li class="menu"><a href="#">행사/이벤트</a>
+							<ul class="sub">
+								<li><a href="#">상품 행사</a></li>
+								<li><a href="#">이벤트</a></li>
+							</ul>
+						</li>
+						<li class="menu"><a href="#">상품</a>
+							<ul class="sub">
+								<li><a href="#">차별화 상품</a></li>
+							</ul>
+						</li>
+						<li class="menu"><a href="#">서비스</a>
+							<ul class="sub">
+								<li><a href="#">생활 서비스</a></li>
+								<li><a href="#">제휴 서비스</a></li>
+								<li><a href="#">신세계 포인트</a></li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</nav>
+        
+        <section>
+            <div class="container">
+				<div class="banner_area">
+					<ul class="bxslider">					
+								<li><a href="#" target=""><img src="img/main_visual_01.jpg" alt="동작대교점오픈(PC)" /></a></li>
+								<li><a href="#" target=""><img src="img/main_visual_02.jpg" alt="과자 가득 채움 (PC)" /></a></li>
+								<li><a href="#" target=""><img src="img/main_visual_03.jpg" alt="마음은 풍성 배는 든든 (PC)" /></a></li>
+								<li><a href="#" target=""><img src="img/main_visual_04.jpg" alt="코나카드 프로모션(PC)" /></a></li>
+					</ul>
+                </div>
+
+            <div class="contents">
+                <div class="intro_wrap">
+                    <article>
+                       	    <a href="#" class="wrapper1"><img src="img/이마트24소개.jpg" alt="이마트24 소개 새로운 라이프스타일 이마트 편의점" />
+                            </a>
+                            <a href="#" class="wrapper2"><img src="img/창업안내.jpg" alt="창업 안내" />
+                            </a>
+                            <a href="#" class="wrapper3"><img src="img/상품.jpg" alt="차별화 상품" /></a>
+                            <div style="float:right; border:1px solid #bbbbbb;">
+						    <a href="#" class="wrapper4"><img src="img/행사.jpg" alt="행사/이벤트" /></a>
+                            </div>
+                    </article>
+                    
+                    <aside>
+                       	    <a href="#"><img src="img/NEWS.jpg" alt="NEWS" style="border:1px solid #bbbbbb;"/>
+				            </a>
+	
+							<div class="store_guide">
+                                <p>매장 안내</p>
+								<div class="input_box">
+									<div class="select_box">
+										<span class="select_wrap">
+											<em></em>
+											<select name="stplacesido" id="stplacesido" title="시/도 선택" onchange="getStSigungu(this.value);" style="width:130px;">
+											<option value="">시/도</option>											
+														<option value="강원도" >강원도</option>							
+														<option value="경기도" >경기도</option>							
+														<option value="경상남도" >경상남도</option>							
+														<option value="경상북도" >경상북도</option>							
+														<option value="광주광역시" >광주광역시</option>					
+														<option value="대구광역시" >대구광역시</option>				
+														<option value="대전광역시" >대전광역시</option>					
+														<option value="부산광역시" >부산광역시</option>					
+														<option value="서울특별시" >서울특별시</option>					
+														<option value="세종특별자치시" >세종특별자치시</option>				
+														<option value="울산광역시" >울산광역시</option>					
+														<option value="인천광역시" >인천광역시</option>					
+														<option value="전라남도" >전라남도</option>							
+														<option value="전라북도" >전라북도</option>							
+														<option value="제주특별자치도" >제주특별자치도</option>				
+														<option value="충청남도" >충청남도</option>							
+														<option value="충청북도" >충청북도</option>							
+										</select>
+										</span>
+										<span class="select_wrap">
+											<em style="left:8px;"></em>
+											<select name="stplacegugun" id="stplacegugun" title="구/군 선택" style="width:120px;">
+											<option value="">구/군</option>
+										</select>
+										</span>
+									</div>
+									<input type="text" name="sText" id="shopName" value="" class="srchform">
+								</div>
+                                <button><img src="img/매장찾기.jpg"></button>
+							</div>
+                        <div>
+							<a href="#"><img src="img/고객센터.jpg" alt="고객센터"/></a>
+						</div>
+                    </aside>
+                    
+                </div> <!-- intro_wrap end -->
+           
+            <div class="slide-banner">
+                <div class="box">
+                    <ul class="banner">
+                        <li><a href="#"><img alt="0000" src="img/rel_logo1.jpg" /></a></li>
+                        <li><a href="#"><img alt="0000" src="img/rel_logo2.jpg" /></a></li>
+                        <li><a href="#"><img alt="0000" src="img/rel_logo3.jpg" /></a></li>
+                        <li><a href="#"><img alt="0000" src="img/rel_logo4.jpg" /></a></li>
+                        <li><a href="#"><img alt="0000" src="img/rel_logo5.jpg" /></a></li>
+                        <li><a href="#"><img alt="0000" src="img/rel_logo6.jpg" /></a></li>
+                        <li><a href="#"><img alt="0000" src="img/rel_logo1.jpg" /></a></li>
+                        <li><a href="#"><img alt="0000" src="img/rel_logo2.jpg" /></a></li>
+                        <li><a href="#"><img alt="0000" src="img/rel_logo3.jpg" /></a></li>
+                        <li><a href="#"><img alt="0000" src="img/rel_logo4.jpg" /></a></li>
+                        <li><a href="#"><img alt="0000" src="img/rel_logo5.jpg" /></a></li>
+                        <li><a href="#"><img alt="0000" src="img/rel_logo6.jpg" /></a></li>
+                    </ul>
+                </div>
+                <p class="control">
+                    <a href="#" class="prev" title="이전배너"><i class="fa fa-chevron-left"></i></a>
+                    <a href="#" class="next" title="다음배너"><i class="fa fa-chevron-right"></i></a>
+                    <a href="#" class="play"><i class="fa fa-pause"><span>자동넘김/정지버튼</span></i></a>
+                </p>                
+            </div> <!-- slide banner end -->
+                
+            </div>
+      
+            </div> <!-- container end-->
+        </section>
+        
+		<footer>
+			<div class="footer_cnt">
+				<ul>
+					<li><a href="#">개인정보 처리방침</a><span style="color:#FFF">|</span></li>
+					<li><a href="#">이용약관</a><span style="color:#FFF">|</span></li>
+					<li><a href="#">사이트 맵</a><span style="color:#FFF">|</span></li>
+					<li><a href="#">상품 입점 상담 신청</a><span style="color:#FFF">|</span></li>
+					<li><a href="#">협력사 신문고</a></li>					
+				</ul>
+                <p class="copyright">
+					(주) 이마트24 / 대표이사: 김성영 / 사업자등록번호: 105-86-92454<br>
+					서울특별시 성동구 성수동 2가 281-4 푸조비즈타워 / 고객센터: 02-6916-1500  / Fax: 02-6916-1468<br>
+					COPYRIGHT (C) EMART24. ALL RIGHT RESERVED.
+				</p>
+                <div class="family_wrap">
+						<div class="sns_link">
+						<a href="#" target="_blank"><img src="https://emart24.co.kr/images/emart24Main/ico_blog.png" alt="블로그" /></a>
+						<a href="#" target="_blank"><img src="https://emart24.co.kr/images/emart24Main/ico_facebook.png" alt="페이스북" /></a>
+						<a href="#" target="_blank"><img src="https://emart24.co.kr/images/emart24Main/ico_instagram.png" alt="인스타그램" /></a>
+					    </div>
+                <div class="select_wrap">
+                <select>
+                        <em><option value="">-패밀리 사이트-</option></em>
+						<option value="#">이마트</option>
+						<option value="#">신세계백화점</option>
+						<option value="#">신세계닷컴</option>
+						<option value="#">스타벅스코리아</option>
+						<option value="#">에브리데이</option>
+						<option value="#">트레이더스</option>             
+                </select>
+                </div>          
+                </div>
+            </div>
+        </footer> 
+    </div>
+
+<script>
+/* image slide banner */
+//$(document).ready(function(){
+//    var pop_slide = $('.pop_area .bxslider').bxSlider({
+//        auto: ( $('.pop_area .bxslider li').length < 2) ? false : true,
+//        speed:500,
+//        loop:false,
+//        tickerHover: true,
+//        autoHover: true,
+//        onSlideAfter: function() { pop_slide.stopAuto() , pop_slide.startAuto(); }
+//    });
+//}    
+</script>
+
+
+<script>
+/* login */
+var modal = document.getElementById('id01');
+
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}  
+</script>    
+    
+    
+<script>
+                          
+/* slide banner */
+$(document).on('click', 'a[href="#"]', function(e) {
+    e.preventDefault();
+});
+
+applySlideBanner('div.slide-banner', 'play', 2000);
+    
+function applySlideBanner(selector, status, speed) {
+    var offsetLeft = 0;
+    var minOffsetLeft = 0;
+    var widthBox = $(selector).find('div.box').innerWidth();
+    var widthBar = 0;
+    var widthMove = $(selector).find('ul.banner li:eq(0)').outerWidth(true) * 2;
+    var timerId = 0;
+    var timerSpeed = speed;
+    var timerStatus = status;
+    
+    // 초기화
+    $(selector).find('ul.banner li').each(function() {
+        widthBar += $(this).outerWidth(true);
+    });
+    $(selector).find('ul.banner').css({'width': widthBar + 'px'});
+    minOffsetLeft = widthBox - widthBar;
+    if (widthBox >= widthBar) return false;   // box가 더 큰 경우 UI 동작 안함
+    if (timerStatus === 'play') {
+        $(selector).find('p.control a.play i').attr({'class': 'fa fa-pause'});
+        timerId = setTimeout(function() {moveSlide('next',  'auto');}, timerSpeed);
+    } else {
+        $(selector).find('p.control a.play i').attr({'class': 'fa fa-play'});
+    }
+    
+    // 이벤트
+    $(selector).find('p.control a.prev').on('click', function() {
+        $(this).find('i').stop().animate({'left': '-5px'}, 50).animate({'left': 0}, 100);
+        moveSlide('prev', 'manual');
+    });
+    
+    $(selector).find('p.control a.next').on('click', function() {
+        $(this).find('i').stop().animate({'right': '-5px'}, 50).animate({'right': 0}, 100);
+        moveSlide('next', 'manual');
+    });
+    
+    $(selector).find('p.control a.play').on('click', function() {
+        if (timerStatus === 'play') {
+            clearTimeout(timerId);
+            $(this).find('i').attr({'class': 'fa fa-play'});
+            timerStatus = 'stop';
+        } else {
+            timerId = setTimeout(function() {moveSlide('next');}, timerSpeed);
+            $(this).find('i').attr({'class': 'fa fa-pause'});
+            timerStatus = 'play';
+        }
+    });
+    
+    function moveSlide(direction, type) {
+        clearTimeout(timerId);
+        if (direction === 'prev') {
+            if (offsetLeft === 0) {
+                $(selector).find('ul.banner').stop().animate({'left': '10px'}, 50).animate({'left': 0}, 100);
+            } else {
+                offsetLeft = offsetLeft + widthMove;
+                if (offsetLeft > 0) offsetLeft = 0;
+                $(selector).find('ul.banner').stop().animate({'left': offsetLeft + 'px'}, 500);
+            }
+        } else if (direction === 'next') {
+            if (offsetLeft === minOffsetLeft) {
+                $(selector).find('ul.banner').stop().animate({'left': (minOffsetLeft - 10) + 'px'}, 50).animate({'left': minOffsetLeft + 'px'}, 100);
+                if (type === 'auto') {
+                    offsetLeft = 0;
+                    $(selector).find('ul.banner').stop().animate({'left': offsetLeft + 'px'}, 500);
+                } else {
+                    $(selector).find('ul.banner').stop().animate({'left': (minOffsetLeft - 10) + 'px'}, 50).animate({'left': minOffsetLeft + 'px'}, 100);
+                }
+            } else {
+                offsetLeft = offsetLeft - widthMove;
+                if (offsetLeft < minOffsetLeft) offsetLeft = minOffsetLeft;
+                $(selector).find('ul.banner').stop().animate({'left': offsetLeft + 'px'}, 500);
+            }
+        }
+        if (timerStatus === 'play') {
+            timerId = setTimeout(function() {moveSlide('next', 'auto');}, timerSpeed);
+        }
+    }
+}
+</script>
+
+</body>
+</html>    
